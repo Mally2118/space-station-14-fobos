@@ -10,12 +10,14 @@ using Robust.Shared.Timing;
 using Content.Server.Body.Components;
 using Content.Shared.DeadSpace.Arkalyse;
 using Content.Server.DeadSpace.Arkalyse.Components;
+using Content.Shared.Popups;
 
 namespace Content.Server.DeadSpace.Arkalyse;
 
 public sealed class ArkalyseMutedSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actionSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -37,6 +39,12 @@ public sealed class ArkalyseMutedSystem : EntitySystem
     {
         if (args.Handled)
             return;
+
+        if (component.IsMutedAttack)
+            _popup.PopupEntity(Loc.GetString("non-active-smoking-carp"), uid, uid);
+
+        if (!component.IsMutedAttack)
+            _popup.PopupEntity(Loc.GetString("active-smoking-carp"), uid, uid);
 
         component.IsMutedAttack = !component.IsMutedAttack;
         args.Handled = true;

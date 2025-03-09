@@ -5,6 +5,7 @@ using Content.Server.DeadSpace.Arkalyse.Components;
 using Robust.Server.GameObjects;
 using Content.Shared.DoAfter;
 using Content.Shared.DeadSpace.Arkalyse;
+using Content.Server.DeadSpace.SmokingCarp.Abilities.Components;
 
 namespace Content.Server.DeadSpace.Arkalyse;
 
@@ -24,7 +25,7 @@ public sealed class GiveArkalyseSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (HasComp<ArkalyseStunComponent>(args.User) || HasComp<ArkalyseDamageComponent>(args.User) || HasComp<ArkalyseMutedComponent>(args.User))
+        if (HasComp<ArkalyseStunComponent>(args.User) || HasComp<ArkalyseDamageComponent>(args.User) || HasComp<ArkalyseMutedComponent>(args.User) || HasComp<ReflectCarpComponent>(args.User))
             return;
 
         var doAfterArgs = new DoAfterArgs(EntityManager, args.User, component.LearnTime, new ArkalyseDoAfterEvent(), uid)

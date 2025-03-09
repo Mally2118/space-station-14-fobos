@@ -10,6 +10,7 @@ using Content.Shared.DeadSpace.Arkalyse;
 using Content.Server.DeadSpace.Arkalyse.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
+using Content.Shared.Popups;
 
 namespace Content.Server.DeadSpace.Arkalyse;
 
@@ -18,6 +19,7 @@ public sealed class ArkalyseStunSystem : EntitySystem
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedActionsSystem _actionSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -43,7 +45,14 @@ public sealed class ArkalyseStunSystem : EntitySystem
         if (args.Handled)
             return;
 
+        if (component.IsStunedAttack)
+            _popup.PopupEntity(Loc.GetString("non-active-smoking-carp"), uid, uid);
+
+        if (!component.IsStunedAttack)
+            _popup.PopupEntity(Loc.GetString("active-smoking-carp"), uid, uid);
+
         args.Handled = true;
+
         component.IsStunedAttack = !component.IsStunedAttack;
     }
 

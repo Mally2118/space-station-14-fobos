@@ -6,6 +6,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Interaction.Events;
 using Robust.Server.GameObjects;
 using Content.Shared.Weapons.Melee;
+using Content.Server.DeadSpace.Arkalyse.Components;
 
 namespace Content.Server.DeadSpace.SmokingCarp
 {
@@ -27,7 +28,7 @@ namespace Content.Server.DeadSpace.SmokingCarp
             if (args.Handled)
                 return;
 
-            if (HasComp<SmokePunchComponent>(args.User) || HasComp<ReflectCarpComponent>(args.User) || HasComp<PowerPunchComponent>(args.User) || HasComp<TripPunchComponent>(args.User))
+            if (HasComp<SmokePunchComponent>(args.User) || HasComp<ReflectCarpComponent>(args.User) || HasComp<PowerPunchComponent>(args.User) || HasComp<TripPunchComponent>(args.User) || HasComp<ArkalyseStunComponent>(args.User))
                 return;
 
             var doAfterArgs = new DoAfterArgs(EntityManager, args.User, component.InjectTime, new GiveSmokingCarpDoAfterEvent(), uid)
