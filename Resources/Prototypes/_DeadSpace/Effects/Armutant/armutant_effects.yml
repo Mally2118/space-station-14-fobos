@@ -123,7 +123,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _DeadSpace/Armutant/general_effects.rsi
+    sprite: _DeadSpace/Armutant/void_shield.rsi
     noRot: true
     state: void_shield
     drawdepth: Effects

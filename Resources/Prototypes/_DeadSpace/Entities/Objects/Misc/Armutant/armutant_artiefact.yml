@@ -1,31 +1,36 @@
 - type: entity
   id: ArtiefactArmutantObjective
   name: Артефакт
-  description: Нечто пульсирующие, нечто живое.
+  description: Нечто пульсирующие.
   parent: BaseItem
   suffix: телепорт
   components:
     - type: Sprite
-      sprite: _DeadSpace/Armutant/bone_shard.rsi
+      sprite: _DeadSpace/Armutant/artefact.rsi
       layers:
-      - state: icon
+      - state: icon_false
     - type: PointLight
       radius: 3
       energy: 3
       color: "#ff66cc"
     - type: ObjectiveCreateMap
+    - type: EmitSoundOnUse
+      sound:
+        collection: RadiationPulse
+    - type: UseDelay
+      delay: 60
 
 - type: entity
   id: ArtiefactArmutantObjectiveTrue
   parent: BaseItem
-  name: Серце пустоты
+  name: Сердце пустоты
   description: Нечто пульсирующие, нечто живое.
   suffix: настоящий
   components:
     - type: Sprite
-      sprite: _DeadSpace/Armutant/bone_shard.rsi
+      sprite: _DeadSpace/Armutant/artefact.rsi
       layers:
-      - state: icon
+      - state: icon_true
     - type: PointLight
       radius: 2
       energy: 2
@@ -42,10 +47,10 @@
   components:
   - type: Sprite
     noRot: true
-    sprite: Structures/Storage/glassbox.rsi
+    sprite: _DeadSpace/Armutant/glassbox_artiefact.rsi
     layers:
     - state: base
-    - state: caplaser # TODO: Remove it after item scaling in cabinets is implemented.
+    - state: artefact
       map: ["enum.ItemCabinetVisuals.Layer"]
       visible: true
     - state: glass
@@ -78,7 +83,7 @@
     damageDivisor: 7.555
     trackAllDamage: true
     damageOverlay:
-      sprite: Structures/Storage/glassbox.rsi
+      sprite: _DeadSpace/Armutant/glassbox_artiefact.rsi
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Glass

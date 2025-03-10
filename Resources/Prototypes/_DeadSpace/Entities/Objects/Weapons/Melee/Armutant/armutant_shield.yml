@@ -36,9 +36,9 @@
   description: Броня, покрытая фиолетовым хитином.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Armor/lingarmor.rsi
+    sprite: _DeadSpace/Armutant/armor_outerclothing.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Armor/lingarmor.rsi
+    sprite: _DeadSpace/Armutant/armor_outerclothing.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -47,7 +47,7 @@
         Piercing: 0.5
         Heat: 0.5
         Radiation: 0.5
-        Stun: 0.2
+        Stun: 0.9
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
@@ -66,9 +66,9 @@
   description: Шлем, покрытый фиолетовым хитином.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/linghelmet.rsi
+    sprite: _DeadSpace/Armutant/armor_head.rsi
   - type: Clothing
-    sprite: Clothing/Head/Helmets/linghelmet.rsi
+    sprite: _DeadSpace/Armutant/armor_head.rsi
   - type: Armor
     modifiers:
       coefficients:

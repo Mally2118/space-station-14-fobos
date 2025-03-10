@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
+  "license": "CC-BY-SA-4.0",
   "copyright": "Taken from https://bdragon1727.itch.io/free-smoke-fx-pixel-2",
   "size": {
     "x": 64,
@@ -154,25 +154,6 @@
           0.1,
           0.1,
           0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ]
-      ]
-    },
-    {
-      "name": "void_shield",
-      "delays": [
-        [
           0.1,
           0.1,
           0.1,

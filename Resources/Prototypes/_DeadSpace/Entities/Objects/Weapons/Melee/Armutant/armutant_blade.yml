@@ -31,7 +31,7 @@
     - Prying
 
 - type: entity
-  parent: WeaponCroissant
+  parent: BaseItem
   id: WeaponTalonClaws
   name: пустотный шип
   description: Довольно-таки большой, а главное сверкает и выглядит дорого!

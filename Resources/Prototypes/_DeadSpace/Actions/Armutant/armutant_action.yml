@@ -18,16 +18,16 @@
 
 - type: entity
   id: ActionToggleSpawnTalon
-  name: "[color=red]Метательный коготь[/color]"
-  description: Создает метательный коготь.
+  name: "[color=red]Метательный осколок[/color]"
+  description: Создает метательный осколок.
   components:
   - type: InstantAction
     useDelay: 5
     itemIconStyle: NoItem
     priority: -16
     icon:
-      sprite: Objects/Consumable/Food/Baked/misc.rsi
-      state: croissant
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: shard
     event: !type:CreateTalonBladeEvent {}
 
 - type: entity
@@ -38,8 +38,8 @@
   - type: WorldTargetAction
     itemIconStyle: NoItem
     icon:
-      sprite: _DeadSpace/Armutant/armblade.rsi
-      state: icon
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: blink
     priority: -15
     event: !type:BladeDashActionEvent {}
     range: 4
@@ -55,8 +55,8 @@
     priority: -14
     raiseOnUser: true
     icon:
-      sprite: _DeadSpace/Armutant/armblade.rsi
-      state: icon
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: spore
     sound:
       path: "/Audio/_DeadSpace/Armutant/sound_misc_enter_blood.ogg"
     event: !type:GoliathSummonTentacleAction { entityId: EffectVoidSporeSpawn }
@@ -92,8 +92,8 @@
     itemIconStyle: NoItem
     checkCanInteract: false
     icon:
-      sprite: Clothing/Head/Helmets/linghelmet.rsi
-      state: icon
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: armor
     event: !type:CreateArmorShieldToggleEvent {}
 
 - type: entity
@@ -107,8 +107,8 @@
     itemIconStyle: NoItem
     checkCanInteract: false
     icon:
-      sprite: _DeadSpace/Armutant/shield.rsi
-      state: icon
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: leg
     event: !type:StunShieldToggleEvent {}
 
 - type: entity
@@ -123,8 +123,8 @@
     checkCanInteract: false
     checkConsciousness: false
     icon:
-      sprite: Objects/Consumable/Food/Baked/misc.rsi
-      state: croissant
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: shield
     event: !type:VoidShieldToggleEvent {}
 
 # Fist region
@@ -155,8 +155,8 @@
     itemIconStyle: NoItem
     priority: -10
     icon:
-      sprite: _DeadSpace/Armutant/blood_fist.rsi
-      state: icon
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: arms
     event: !type:FistStunAroundToggleEvent {}
     range: 6
     deselectOnMiss: false
@@ -173,8 +173,8 @@
     checkConsciousness: false
     itemIconStyle: BigAction
     icon:
-      sprite: _DeadSpace/Armutant/blood_fist.rsi
-      state: icon
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: healthup
     event: !type:FistMendSelfToggleEvent {}
 
 - type: entity
@@ -188,8 +188,8 @@
     priority: -8
     itemIconStyle: NoItem
     icon:
-      sprite: _DeadSpace/Armutant/blood_fist.rsi
-      state: icon
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: energyup
     event: !type:FistBuffSpeedToggleEvent {}
 
 # Gun region
@@ -206,7 +206,7 @@
     checkCanInteract: false
     checkConsciousness: false
     icon:
-      sprite: _DeadSpace/Armutant/blood_fist.rsi
+      sprite: _DeadSpace/Armutant/armutant_gun.rsi
       state: icon
     event: !type:GunArmutantToggleEvent {}
 
@@ -219,8 +219,8 @@
     itemIconStyle: NoItem
     priority: -7
     icon:
-      sprite: _DeadSpace/Armutant/blood_fist.rsi
-      state: icon
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: zoom
     event: !type:GunZoomActionEvent {}
     useDelay: 1
 
@@ -233,8 +233,8 @@
     itemIconStyle: NoItem
     priority: -6
     icon:
-      sprite: _DeadSpace/Armutant/blood_fist.rsi
-      state: icon
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: smoke
     event: !type:GunSmokeActionEvent {}
     useDelay: 20
 
@@ -253,6 +253,6 @@
     itemIconStyle: NoItem
     useDelay: 5
     icon:
-      sprite: _DeadSpace/Armutant/blood_fist.rsi
-      state: icon
+      sprite: _DeadSpace/Actions/armutant_actions.rsi
+      state: revive
     event: !type:EnterArmutantStasisEvent {}
